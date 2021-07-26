@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApiRest.Abstraction\ApiRest.Abstraction.csproj" />
+    <ProjectReference Include="..\ApiRest.Entities\ApiRest.Entities.csproj" />
+    <ProjectReference Include="..\ApiRest.Repository\ApiRest.Repository.csproj" />
+    <ProjectReference Include="..\ApiRest.Services\ApiRest.Services.csproj" />
+  </ItemGroup>
+
+</Project>
