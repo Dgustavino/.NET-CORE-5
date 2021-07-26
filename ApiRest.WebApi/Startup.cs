@@ -98,7 +98,7 @@ namespace ApiRest.WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApiDbContext db)
         {
             if (env.IsDevelopment())
             {
@@ -108,7 +108,7 @@ namespace ApiRest.WebApi
             }
 
             //app.UseHttpsRedirection();
-
+            db.Database.Migrate();
             app.UseRouting();
 
             app.UseCors(options => options

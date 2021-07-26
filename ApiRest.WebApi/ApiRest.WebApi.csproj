@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>50dca4cc-596a-48bd-839c-f5de7916ab50</UserSecretsId>
-    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,8 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApiRest.Abstraction\ApiRest.Abstraction.csproj" />
     <ProjectReference Include="..\ApiRest.Application\ApiRest.Application.csproj" />
+    <ProjectReference Include="..\ApiRest.DataAccess\ApiRest.DataAccess.csproj" />
     <ProjectReference Include="..\ApiRest.Entities\ApiRest.Entities.csproj" />
+    <ProjectReference Include="..\ApiRest.Repository\ApiRest.Repository.csproj" />
     <ProjectReference Include="..\ApiRest.Services\ApiRest.Services.csproj" />
   </ItemGroup>
 

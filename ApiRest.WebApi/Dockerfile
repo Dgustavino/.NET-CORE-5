@@ -1,8 +1,5 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-#Depending on the operating system of the host machines(s) that will build or run the containers, the image specified in the FROM statement may need to be changed.
-#For more information, please see https://aka.ms/containercompat
-
 FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 WORKDIR /app
 EXPOSE 80
@@ -11,6 +8,12 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["ApiRest.WebApi/ApiRest.WebApi.csproj", "ApiRest.WebApi/"]
+COPY ["ApiRest.Services/ApiRest.Services.csproj", "ApiRest.Services/"]
+COPY ["ApiRest.Abstraction/ApiRest.Abstraction.csproj", "ApiRest.Abstraction/"]
+COPY ["ApiRest.Entities/ApiRest.Entities.csproj", "ApiRest.Entities/"]
+COPY ["ApiRest.Application/ApiRest.Application.csproj", "ApiRest.Application/"]
+COPY ["ApiRest.Repository/ApiRest.Repository.csproj", "ApiRest.Repository/"]
+COPY ["ApiRest.DataAccess/ApiRest.DataAccess.csproj", "ApiRest.DataAccess/"]
 RUN dotnet restore "ApiRest.WebApi/ApiRest.WebApi.csproj"
 COPY . .
 WORKDIR "/src/ApiRest.WebApi"
